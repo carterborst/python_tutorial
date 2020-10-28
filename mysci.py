@@ -22,7 +22,8 @@ with open(filename, 'r') as datafile:
          split_line = line.split() 
          data['date'].append(split_line[0])
          data['time'].append(split_line[1])
-         data['tempout'].append(split_line[2])
+         data['tempout'].append(float(split_line[2]))
+#  add of float() changes type to float, can do math on it now
 
 # DEBUG
 # print(data[0])
@@ -43,6 +44,7 @@ with open(filename, 'r') as datafile:
 
 # Dictioniary
 # print(data['time'])
+print(data['tempout'])
 
 
 
