@@ -1,5 +1,8 @@
 # Initialize my data variable
-data = []
+# data = []  # list
+# data = {}  # dictionary
+data = {'date':[], 'time':[], 'tempout':[]}
+time = data['time']
 
 # Read and parse the data file
 filename = "data/wxobs20170821.txt"
@@ -9,10 +12,17 @@ with open(filename, 'r') as datafile:
     for _ in range(3):
         datafile.readline()
 
+# Changing data to columns
+# dictionary
+
    # Read and parse the rest of the file
     for line in datafile:
-        datum = line.split()
-        data.append(datum)
+#        datum = line.split()
+#        data.append(datum)
+         split_line = line.split() 
+         data['date'].append(split_line[0])
+         data['time'].append(split_line[1])
+         data['tempout'].append(split_line[2])
 
 # DEBUG
 # print(data[0])
@@ -30,4 +40,13 @@ with open(filename, 'r') as datafile:
 #
 #print(data[5:8][0])
 #print(data[5])
+
+# Dictioniary
+# print(data['time'])
+
+
+
+
+
+
 
